@@ -10,6 +10,7 @@ SUIT_PILES = {
 
 CROSS: dict[str, dict] = {}
 CHARACTER_NAME: str | None = None
+GOAL: dict | None = None
 
 
 def name_character(player_name: str) -> dict:
@@ -36,3 +37,18 @@ def draw_cross_card(
     card = pile.pop()
     CROSS[position] = card
     return card
+
+
+def draw_goal_card() -> dict:
+    """Deal the Goal: reshuffle what's left of fate's deck and draw one card face up."""
+    global GOAL
+    if len(CROSS) < 4:
+        raise ValueError("The cross isn't complete yet — draw all four cross positions before dealing the Goal.")
+    if GOAL is not None:
+        raise ValueError("The Goal has already been dealt for this Sitting.")
+
+    remainder = [(suit, card) for suit, pile in SUIT_PILES.items() for card in pile]
+    suit, card = random.choice(remainder)
+    SUIT_PILES[suit].remove(card)
+    GOAL = card
+    return GOAL

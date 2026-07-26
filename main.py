@@ -1,11 +1,12 @@
 from mcp.server.fastmcp import FastMCP
 
 from oracle_data import ORACLE_GRID
-from thesitting import draw_cross_card, name_character
+from thesitting import draw_cross_card, draw_goal_card, name_character
 from omens import cast_omen
 from debt import call_the_hand
 from defiance import defy_roll, defy_resolve
 from sheet import get_sheet
+from prompts import sitting
 
 mcp = FastMCP("fortuneteller")
 
@@ -18,7 +19,10 @@ def oracle_grid() -> list[dict]:
 
 mcp.resource("player://{player_name}/sheet", mime_type="application/json")(get_sheet)
 
+mcp.prompt()(sitting)
+
 mcp.add_tool(draw_cross_card)
+mcp.add_tool(draw_goal_card)
 mcp.add_tool(name_character)
 mcp.add_tool(cast_omen)
 mcp.add_tool(call_the_hand)
