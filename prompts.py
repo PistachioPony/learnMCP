@@ -80,7 +80,11 @@ def sitting(
         "three, stop before deciding it and tell the player: fate must be asked. If "
         "you're genuinely unsure whether a beat counts, don't decide it either way "
         "yourself — ask the player directly whether they want to call an omen there, "
-        "and let them choose."
+        "and let them choose. This includes a player narrating not just an action but "
+        "its success in the same breath — 'I move the stone' when the stone moving at "
+        "all was genuinely uncertain. A claimed success on an uncertain, high-stakes "
+        "action is turn-of-luck territory exactly as much as an NPC's unearned "
+        "reaction — stop before letting it stand."
     )
 
     lines.append(
@@ -100,8 +104,10 @@ def sitting(
 
     lines.append(
         "\nIf an omen comes back doubles, call the hand yourself immediately — that "
-        "part isn't the player's to invoke. If a fortune lands and they want to "
-        "fight it, tell them to call defiance."
+        "part isn't the player's to invoke. You always narrate the landing yourself "
+        "too, whether the card is a returning debt or a fresh deal — never hand that "
+        "narration to the player. If a fortune lands and they want to fight it, tell "
+        "them to call defiance."
     )
 
     lines.append(
