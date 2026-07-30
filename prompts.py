@@ -18,7 +18,7 @@ def sitting(
     seek_suit: Literal["Hearts", "Diamonds", "Clubs", "Spades"],
     carry_suit: Literal["Hearts", "Diamonds", "Clubs", "Spades"],
 ) -> UserMessage:
-    """Run the Sitting: name the character, draw the cross, deal the Goal, and hand the moment to the player."""
+    """Run the Sitting: name the character, draw the cross and Goal, then sequence the ritual's questions one at a time, in canon's order."""
     name_character(player_name)
     draw_cross_card(_SUIT_NAME_TO_SYMBOL[motivation_suit], "Motivation")
     draw_cross_card(_SUIT_NAME_TO_SYMBOL[ends_suit], "Ends")
@@ -27,18 +27,43 @@ def sitting(
     draw_goal_card()
 
     lines = [
-        f"The Sitting is done, {player_name}. Read these five lines to the "
-        "player exactly as written — don't paraphrase or summarize them:"
+        f"The Sitting begins, {player_name}. This is the first scene of the "
+        "campaign, played in character — not setup before the game, the game "
+        "itself. Ask the player where their character meets the Fortuneteller, "
+        "and decide together where they sit. Wait for their answer before "
+        "doing anything else below."
     ]
+
+    lines.append(
+        "\n---\nONCE THEY'VE ANSWERED where they meet the Fortuneteller (this "
+        "line is an instruction to you, not dialogue to read aloud): read "
+        "these four lines to the player exactly as written — don't paraphrase "
+        "or summarize them:"
+    )
     for position in _LENS_ORDER:
         card = thesitting.CROSS[position]
         lines.append(f"**{position} — {card['suit_name']}.** *{card['phrase']}*")
+    lines.append(
+        "\nThen ask: who is your character — who do these four phrases "
+        "describe? Wait for their answer before moving on."
+    )
+
     goal = thesitting.GOAL
-    lines.append(f"**The Goal — {goal['suit_name']}.** *{goal['phrase']}*")
+    lines.append(
+        "\n---\nONCE THEY'VE DESCRIBED their character (instruction to you, "
+        "not dialogue): briefly reflect back the character they described, "
+        "in a line or two. Then reveal the Goal, reading this line exactly "
+        f"as written: **The Goal — {goal['suit_name']}.** *{goal['phrase']}* "
+        "Then ask what this Goal means to their character. Wait for their "
+        "answer before moving on."
+    )
 
     lines.append(
-        "\nTell me about your character — who these four phrases describe — "
-        "and what your Goal means to them, in their own words."
+        "\n---\nONCE THEY'VE ANSWERED what the Goal means (instruction to "
+        "you, not dialogue): ask where their character is and where they're "
+        "going as the journey begins. Wait for their answer, then begin "
+        "narrating from there — the rules below govern everything from that "
+        "point on."
     )
 
     lines.append(
