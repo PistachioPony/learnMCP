@@ -5,6 +5,7 @@ from thesitting import draw_cross_card, draw_goal_card, name_character
 from omens import cast_omen
 from debt import call_the_hand
 from defiance import defy_roll, defy_resolve
+from unclaimed import draw_unclaimed_card
 from sheet import get_sheet
 from prompts import sitting
 
@@ -28,6 +29,7 @@ mcp.add_tool(cast_omen)
 mcp.add_tool(call_the_hand)
 mcp.add_tool(defy_roll)
 mcp.add_tool(defy_resolve)
+mcp.add_tool(draw_unclaimed_card)
 mcp.add_tool(get_sheet)
 
 

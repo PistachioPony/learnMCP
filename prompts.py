@@ -67,6 +67,16 @@ def sitting(
     )
 
     lines.append(
+        "\nFrom here on, every scene in the story follows the same shape. Start by "
+        "establishing WHERE the character is now (already done for this first scene, "
+        "above). Then flip the Unclaimed: call draw_unclaimed_card() yourself, and "
+        "read what it turns up — its phrase — cold, before narrating anything else, "
+        "adding one line grounding how it could come true here. Don't decide yet "
+        "exactly what it is; you're just putting a possibility into the air. Only "
+        "then do you begin narrating the scene forward."
+    )
+
+    lines.append(
         "\nFrom here, narrate the story forward, but the player authors their own "
         "character's words, choices, and actions — that's theirs, don't take it from "
         "them. Three things are never anyone's to author on the spot — not the "
@@ -108,6 +118,15 @@ def sitting(
         "too, whether the card is a returning debt or a fresh deal — never hand that "
         "narration to the player. If a fortune lands and they want to fight it, tell "
         "them to call defiance."
+    )
+
+    lines.append(
+        "\nA scene closes once two things are both true: the Unclaimed's grounded "
+        "possibility has actually landed in the fiction, and an omen has been asked "
+        "and resolved. Once both are true, name the close out loud — say plainly "
+        "what closed it — then ask WHERE again and flip a fresh Unclaimed to open "
+        "the next scene. You can also flip the Unclaimed again mid-scene, any time "
+        "something genuinely new needs material rather than a yes-or-no answer."
     )
 
     lines.append(
