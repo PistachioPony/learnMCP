@@ -1,6 +1,5 @@
 import thesitting
-from thesitting import CROSS
-from debt import DEBT_ROW
+import debt
 
 
 def get_sheet(player_name: str) -> dict:
@@ -9,4 +8,4 @@ def get_sheet(player_name: str) -> dict:
         raise ValueError("No character has been named yet — call name_character first.")
     if player_name != thesitting.CHARACTER_NAME:
         raise ValueError(f"No character named '{player_name}' — the current character is '{thesitting.CHARACTER_NAME}'.")
-    return {"cross": CROSS, "goal": thesitting.GOAL, "debt_row": DEBT_ROW}
+    return {"cross": thesitting.CROSS, "goal": thesitting.GOAL, "debt_row": debt.DEBT_ROW}

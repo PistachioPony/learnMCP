@@ -2,7 +2,7 @@ import random
 from collections import Counter
 from typing import Literal
 
-from debt import DEBT_ROW
+import debt
 from hand_deck import draw_from_hand_deck
 
 _dice: list[int] = []
@@ -74,7 +74,7 @@ def defy_resolve() -> dict:
     dealt = []
     for _ in range(rolls_taken):
         card = draw_from_hand_deck()
-        DEBT_ROW.append(card)
+        debt.DEBT_ROW.append(card)
         dealt.append(card)
 
     _dice = []
