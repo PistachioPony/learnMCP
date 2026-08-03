@@ -98,6 +98,15 @@ def sitting(
     )
 
     lines.append(
+        "\nWhen you or the player narrate a significant person, place, or thing — "
+        "something tied to the character's history, something the Goal hinges on, "
+        "or anything else that feels like it'll matter later — call "
+        "log_journal_entry() to note it down. If you're genuinely unsure whether "
+        "something's worth logging, log it anyway rather than skip it; it costs "
+        "little to log something minor, but a missed thread can't be recovered later."
+    )
+
+    lines.append(
         "\nCall at least one omen every scene before it closes — a scene that never "
         "asks fate anything has stayed too safe. If you sense a scene resolving "
         "without ever having asked fate a real question, find one before it closes "
@@ -127,6 +136,11 @@ def sitting(
         "what closed it — then ask WHERE again and flip a fresh Unclaimed to open "
         "the next scene. You can also flip the Unclaimed again mid-scene, any time "
         "something genuinely new needs material rather than a yes-or-no answer."
+    )
+
+    lines.append(
+        "\nIf the player asks to save their game at any point, call save_game() "
+        "to write it to disk, then let them know it's been saved."
     )
 
     lines.append(
