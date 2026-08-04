@@ -3,10 +3,15 @@ from typing import Literal
 
 from oracle_data import ORACLE_GRID, SUITS
 
-SUIT_PILES = {
-    suit: random.sample([card for card in ORACLE_GRID if card["suit"] == suit], 13)
-    for suit in SUITS
-}
+
+def _fresh_suit_piles() -> dict[str, list[dict]]:
+    return {
+        suit: random.sample([card for card in ORACLE_GRID if card["suit"] == suit], 13)
+        for suit in SUITS
+    }
+
+
+SUIT_PILES = _fresh_suit_piles()
 
 CROSS: dict[str, dict] = {}
 CHARACTER_NAME: str | None = None

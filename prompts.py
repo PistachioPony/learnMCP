@@ -19,6 +19,17 @@ def sitting(
     carry_suit: Literal["Hearts", "Diamonds", "Clubs", "Spades"],
 ) -> UserMessage:
     """Run the Sitting: name the character, draw the cross and Goal, then sequence the ritual's questions one at a time, in canon's order."""
+    if thesitting.CHARACTER_NAME is not None:
+        return UserMessage(
+            f"A character named {thesitting.CHARACTER_NAME} already exists for this "
+            "game. Tell the player this, and ask whether they want to start a full "
+            "new game — starting over will erase their current character, cross, "
+            "Goal, debts, hand deck, and Journal of Fate entirely. If they confirm, "
+            "call reset_game(), then run the /sitting prompt again with the new "
+            "character's details. If they don't confirm, don't call reset_game() — "
+            "just continue the game they already have."
+        )
+
     name_character(player_name)
     draw_cross_card(_SUIT_NAME_TO_SYMBOL[motivation_suit], "Motivation")
     draw_cross_card(_SUIT_NAME_TO_SYMBOL[ends_suit], "Ends")

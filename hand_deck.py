@@ -2,7 +2,12 @@ import random
 
 from oracle_data import ORACLE_GRID
 
-HAND_DECK = random.sample(ORACLE_GRID, len(ORACLE_GRID))
+
+def _fresh_hand_deck() -> list[dict]:
+    return random.sample(ORACLE_GRID, len(ORACLE_GRID))
+
+
+HAND_DECK = _fresh_hand_deck()
 
 
 def draw_from_hand_deck() -> dict:

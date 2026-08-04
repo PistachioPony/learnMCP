@@ -40,3 +40,14 @@ def load_game() -> None:
     debt.DEBT_ROW = state["debt_row"]
     hand_deck.HAND_DECK = state["hand_deck"]
     journal_of_fate.JOURNAL = state["journal"]
+
+
+def reset_game() -> None:
+    """Wipe all game state and start a full new game, not just a new Sitting."""
+    thesitting.CHARACTER_NAME = None
+    thesitting.CROSS = {}
+    thesitting.GOAL = None
+    thesitting.SUIT_PILES = thesitting._fresh_suit_piles()
+    debt.DEBT_ROW = []
+    hand_deck.HAND_DECK = hand_deck._fresh_hand_deck()
+    journal_of_fate.JOURNAL = []
