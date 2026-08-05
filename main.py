@@ -10,7 +10,6 @@ from debt import call_the_hand
 from defiance import defy_roll, defy_resolve
 from unclaimed import draw_unclaimed_card
 from sheet import get_sheet
-from how_to_play import how_to_play
 from prompts import sitting
 from journal_of_fate import log_journal_entry
 import persistence
@@ -32,9 +31,6 @@ def oracle_grid() -> list[dict]:
 # a resource template (takes in variables).
 mcp.resource("player://{player_name}/sheet", mime_type="application/json")(get_sheet)
 
-# a fixed resource, plain prose, no variables.
-mcp.resource("guide://how_to_play", mime_type="text/plain")(how_to_play)
-
 # registering the prompt we can invoke.
 # PROMPTS = a fixed, reusable message template that
 # a human explicitly invokes.
@@ -51,7 +47,6 @@ mcp.add_tool(defy_roll)
 mcp.add_tool(defy_resolve)
 mcp.add_tool(draw_unclaimed_card)
 mcp.add_tool(get_sheet)
-mcp.add_tool(how_to_play)
 mcp.add_tool(log_journal_entry)
 mcp.add_tool(save_game)
 mcp.add_tool(reset_game)

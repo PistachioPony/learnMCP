@@ -1,36 +1,4 @@
-# How to Play — draft
-
-Player-facing flavor + orientation text for the `how_to_play` resource/tool
-(the onboarding-UI gap, queued 2026-08-01). Not the full rules — RULES.md
-stays the mechanical reference. This is the vibe-and-shape-of-play intro a
-first-time player sees before anything else.
-
-Scope, as decided: what kind of game this is, how the Sitting works
-(meeting the Fortuneteller, creating a character, the Goal), what playing
-toward the Goal feels like turn to turn, and when to call an Omen. The
-"read it truer" convention was deliberately left out — it's a corrective
-phrase a first-time reader has no context for yet, and more likely
-something Claude uses/explains to the player in the moment than something
-onboarding text should front-load. A full worked example (specific cards
-drawn, a character built from them) was also deliberately left out, on
-purpose — Maria's call: showing one worked example risks narrowing a new
-player's own imagination rather than opening it up; the text below models
-*how* to read a card without pre-deciding what any specific reading means.
-Not registered as code yet — content only.
-
-Terminology decision (learnMCP-only, deliberately not touching the
-`fortunteller` repo's own RULES.md from here): "cross position" doesn't
-fit a version with no physical card layout — nothing gets placed anywhere,
-cards just get drawn and read. Replacing with **"facet"** — one of four
-angles on the same character (Motivation, Ends, Seek, Carry), not a slot
-on a table. Considered and rejected: "Lens" (already reserved in
-`RULES.md` for a different, currently-parked mechanic — a collision to
-remember); "Persona" (Jung's own term for the social mask shown to
-others, which is close to the opposite of what these four things are);
-"aspect" (a fine, plainer alternative, still on the table if "facet"
-stops fitting somewhere).
-
----
+# How to Play
 
 *"Until you make the unconscious conscious, it will direct your life and
 you will call it fate." — C.G. Jung*

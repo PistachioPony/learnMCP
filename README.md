@@ -4,53 +4,24 @@ An MCP server that acts as a mechanical companion and game master for **The
 Fortuneteller's Hand**, an original solo tabletop RPG. Claude reads the
 cards, casts the omens, and runs the table; the player just plays.
 
-This project started as a way to learn the Model Context Protocol properly —
-not with a toy demo, but by building against a real game with a real
-economy, real state, and real consequences for getting the state wrong.
+## What playing feels like
 
-## Why this is technically interesting
+A short version, before you install anything: you sit with the
+Fortuneteller first — where you meet them is the one choice made before any
+card is drawn. Four suits become four facets of who you are; the
+Fortuneteller draws one card from each and speaks what it reveals, and you
+build a character from those four phrases. One more card — your Goal — and
+you set out.
 
-- **Tool vs. resource placement is based on tested behavior, not
-  assumption.** Resources in MCP are pull-only — a human has to deliberately
-  fetch them; a model can't reach for one autonomously mid-conversation. That
-  distinction isn't obvious from the spec alone, and this project found it by
-  testing live: a resource that worked in isolation silently failed the
-  moment the model needed to check it on its own. The fix was to register
-  the same underlying function twice — once as a resource, once as a tool —
-  based on who actually needs to initiate the read. See `sheet.py` +
-  `main.py`.
+From there, every scene works the same way: decide where you are, flip a
+card to see what's stirring, narrate forward. The moment the story reaches
+another heart, something hidden, or needs a turn of luck, you stop and ask
+fate directly — an Omen, not a guess. Fate can turn against you, too; when
+it does, you can fight it.
 
-- **A prompt does real orchestration, not just templating.** The `sitting`
-  prompt (`prompts.py`) runs deterministic Python — naming the character,
-  drawing all four cross cards, dealing the Goal — before it ever returns a
-  message. That's a deliberate choice not to trust the model to chain five
-  tool calls in the right order; the prompt *is* the orchestration.
-
-- **State carries real invariants, not just values.** Two independent
-  52-card decks (one committed entirely at character creation, one drawn
-  from throughout play), a debt-row economy, and a reshuffle mechanic that
-  has to reason about what's currently owed — a card can't be reshuffled
-  back into play while its debt twin is still outstanding, or the same
-  fortune could land twice. See `hand_deck.py`'s `draw_from_hand_deck()`.
-
-## Architecture at a glance
-
-| File | MCP primitive(s) | Responsibility |
-|---|---|---|
-| `main.py` | — | Thin registration layer; the only file that touches the `mcp` server object |
-| `oracle_data.py` | resource (`oracle://grid`) | The fixed 52-phrase reference grid |
-| `thesitting.py` | tools | Character creation: the cross, the Goal, Fate's deck |
-| `hand_deck.py` | (shared infra) | The Fortuneteller's Hand deck, with Told/reshuffle logic |
-| `omens.py` | tool | The compare-never-sum omen resolution, stateless |
-| `debt.py` | tool | The debt row and the Called Hand |
-| `defiance.py` | tool | The multi-roll defiance ritual |
-| `unclaimed.py` | tool | The Unclaimed: a turn's content-generation beat |
-| `sheet.py` | resource + tool | The player's cross/debt sheet — registered as both, deliberately |
-| `prompts.py` | prompt | The Sitting ritual and the standing GM instruction |
-
-Every file above `main.py` is plain Python with no MCP dependency of its own
-— it can be read, tested, and understood on its own terms. MCP is the
-delivery layer wrapped around it, not the logic itself.
+That's the shape of it. Full mechanics in [`RULES.md`](RULES.md); a
+gentler, fuller walkthrough in
+[`HOW_TO_PLAY.md`](HOW_TO_PLAY.md).
 
 ## Running it
 
@@ -73,9 +44,9 @@ Requires Python and [`uv`](https://docs.astral.sh/uv/).
    "fortuneteller."
 5. Start a new chat and pull in the `sitting` prompt.
 
-## Further reading
+## Curious about the build?
 
-- [`RULES.md`](RULES.md) — the full solo ruleset: the Sitting, the Turn,
-  Omens, the Called Hand, Defiance.
-- [`DESIGN.md`](DESIGN.md) — the reasoning behind the decisions above, in
-  more depth.
+This started as a way to learn the Model Context Protocol properly — the
+tool/resource/prompt choices, the state design, a few real bugs found and
+fixed along the way — all written up in [`DESIGN.md`](DESIGN.md). Or just
+reach out to me directly.
