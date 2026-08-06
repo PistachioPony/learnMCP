@@ -3,11 +3,8 @@ import random
 from oracle_data import ORACLE_GRID
 
 
-def _fresh_hand_deck() -> list[dict]:
-    return random.sample(ORACLE_GRID, len(ORACLE_GRID))
-
-
-HAND_DECK = _fresh_hand_deck()
+# the Fortuneteller's Hand deck, freshly shuffled at module load.
+HAND_DECK = random.sample(ORACLE_GRID, len(ORACLE_GRID))
 
 
 def draw_from_hand_deck() -> dict:
