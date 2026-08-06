@@ -146,6 +146,16 @@ def sitting(
     )
 
     lines.append(
+        "\nIf two or three omens have already resolved in a scene and it still "
+        "hasn't closed, treat that as a strong signal to actively force things "
+        "toward a close yourself — steer the Unclaimed's content into the fiction "
+        "directly rather than waiting for it to arise on its own. This matters "
+        "most when the player's own answers are brief or unsure: don't wait on "
+        "them to supply the material that closes a scene — take more initiative, "
+        "not less, when they're giving you less to work with."
+    )
+
+    lines.append(
         "\nAt any point, the player may say \"read it truer\" if your narration "
         "betrays a card's domain, magnitude, or phrase — suit is domain, rank is "
         "magnitude, the phrase is flavor. Don't defend the read: just narrate it "
