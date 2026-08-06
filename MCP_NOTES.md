@@ -90,3 +90,78 @@ trust-the-model in-context judgment** (this project). Given the project's
 ethos in `RULES.md` — restraint, "Claude-the-collaborator," fate keeping
 things behind its hand — the minimal/trust-the-model choice reads as
 deliberate, not unfinished.
+
+### Why persistence and the Journal got cut (2026-08-06) — outline for later
+
+Working name for the axis this incident is really about: **generative vs.
+classical code**, and why MCP doesn't give you a clean way to fold the two
+together — especially inside Claude Desktop specifically, not just at the
+protocol level. Persistence and the Journal of Fate are gone from the
+codebase now (`persistence.py`, `journal_of_fate.py`, `reset_game`,
+`save_game`, `log_journal_entry` all removed); this is the reasoning trail,
+kept as an outline rather than finished prose, for whenever the article
+gets written.
+
+**The concrete incident, in order:**
+
+- The new-Sitting overwrite guard (`sitting()` in `prompts.py`) was
+  classical code — a plain `if thesitting.CHARACTER_NAME is not None`
+  check — trying to hand off to the generative side with an instruction:
+  "call `reset_game()`, then run the `/sitting` prompt again." That's not
+  a real capability. Prompts are pull-only by MCP's own design (the
+  session-2 finding, resurfacing here in a new shape) — a human has to
+  invoke one, Claude structurally cannot. The classical code wrote a
+  stage direction for an actor who doesn't have that move.
+- Claude, unable to comply, substituted its own equivalent: called
+  `name_character`/`draw_cross_card` directly, since those *are* tools it
+  has autonomy over. But that path has no access to the ceremony text
+  (the verbatim card recitation, the ordered WHERE-question gating) that
+  only exists inside `sitting()`'s returned message — and no memory of
+  the suit arguments the player had actually typed into the chip, since
+  the guard's early return discarded them before they were ever used.
+  Live result: a paraphrased, un-ceremonial cross, drawn from suits the
+  player never chose.
+- A second, independent wrinkle, specific to the client rather than the
+  protocol: Claude Desktop rendered the prompt's own returned content as
+  an untrusted file attachment, and on the confirmed-reset path, Claude's
+  own safety layer explicitly labeled it "a potential injection attempt"
+  before asking clarifying questions — because the content was
+  instructing an irreversible action from inside something structurally
+  identical to a file upload. Three independently reasonable layers
+  (MCP's prompt-authority model, Desktop's attachment rendering, the
+  model's own distrust of file-borne destructive instructions) stacked
+  into a dead end none of the three "caused" alone.
+
+**The reframe, not a patch:** the fix that was seriously considered
+first — a new tool that resets, redraws, and recites atomically in one
+autonomous call — would have worked, but only by giving up the very thing
+that made a fresh Sitting feel ceremonial (or by duplicating the ritual
+logic that already exists elsewhere in the file, which is its own kind of
+bug waiting to happen). Instead of engineering a bridge across the seam,
+the actual move was asking whether the feature *needing* the bridge was
+worth it. It wasn't: persistence only ever saved structured state (cross,
+debts, deck) — never the actual prose, voice, or established narrative
+texture of a paused session. "Resuming a story" was never going to feel
+seamless off that alone, so the thinner, real win (not losing a character
+sheet) wasn't worth what it kept costing to defend. Cutting it dissolved
+the underlying problem rather than solving it. The Journal of Fate went
+for the identical reason, one level down — its whole docstring-stated
+purpose ("the thing to check continuity against... a missed thread can't
+be recovered later") was bridging a gap that no longer exists once a
+session is meant to live entirely inside one continuous conversation.
+
+**The general claim, for the article:** MCP's three primitives already
+split cleanly along one axis — model-controlled (tools) vs.
+human-controlled (resources, prompts). That axis is fine as long as
+each feature stays on one side of it. The trouble shows up when a single
+feature needs a human-controlled action (re-running a prompt) to happen
+as an automatic *consequence* of something the model just decided
+mid-conversation (confirming a destructive reset) — that need sits
+exactly on the seam, and nothing in the primitive set is built to cross
+it automatically. Every fix available at that seam trades something away
+(duplicated logic, lost ceremony, or — what actually happened here —
+cutting the feature that needed the bridge in the first place). Worth
+distinguishing explicitly from the session-2 finding: that one was about
+*which* primitive to pick for a given feature; this one is about a single
+primitive trying to reach across the agency line from the inside, which
+structurally can't be done no matter which primitive it is.
