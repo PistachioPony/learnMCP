@@ -11,16 +11,10 @@ from defiance import defy_roll, defy_resolve
 from unclaimed import draw_unclaimed_card
 from sheet import get_sheet
 from prompts import sitting
-from journal_of_fate import log_journal_entry
-import persistence
-from persistence import save_game, reset_game
 
 # instantiate the MCP - create the server object.
 # shows up as connector name.
 mcp = FastMCP("fortuneteller")
-
-# load any saved game before anything else runs.
-persistence.load_game()
 
 # RESOURCES = data a human deliberately pulls in.
 @mcp.resource("oracle://grid", mime_type="application/json")
@@ -47,9 +41,6 @@ mcp.add_tool(defy_roll)
 mcp.add_tool(defy_resolve)
 mcp.add_tool(draw_unclaimed_card)
 mcp.add_tool(get_sheet)
-mcp.add_tool(log_journal_entry)
-mcp.add_tool(save_game)
-mcp.add_tool(reset_game)
 
 
 if __name__ == "__main__":

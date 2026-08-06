@@ -19,17 +19,6 @@ def sitting(
     carry_suit: Literal["Hearts", "Diamonds", "Clubs", "Spades"],
 ) -> UserMessage:
     """Run the Sitting: name the character, draw the cross and Goal, then sequence the ritual's questions one at a time, in canon's order."""
-    if thesitting.CHARACTER_NAME is not None:
-        return UserMessage(
-            f"A character named {thesitting.CHARACTER_NAME} already exists for this "
-            "game. Tell the player this, and ask whether they want to start a full "
-            "new game — starting over will erase their current character, cross, "
-            "Goal, debts, hand deck, and Journal of Fate entirely. If they confirm, "
-            "call reset_game(), then run the /sitting prompt again with the new "
-            "character's details. If they don't confirm, don't call reset_game() — "
-            "just continue the game they already have."
-        )
-
     name_character(player_name)
     draw_cross_card(_SUIT_NAME_TO_SYMBOL[motivation_suit], "Motivation")
     draw_cross_card(_SUIT_NAME_TO_SYMBOL[ends_suit], "Ends")
@@ -109,15 +98,6 @@ def sitting(
     )
 
     lines.append(
-        "\nWhen you or the player narrate a significant person, place, or thing — "
-        "something tied to the character's history, something the Goal hinges on, "
-        "or anything else that feels like it'll matter later — call "
-        "log_journal_entry() to note it down. If you're genuinely unsure whether "
-        "something's worth logging, log it anyway rather than skip it; it costs "
-        "little to log something minor, but a missed thread can't be recovered later."
-    )
-
-    lines.append(
         "\nCall at least one omen every scene before it closes — a scene that never "
         "asks fate anything has stayed too safe. If you sense a scene resolving "
         "without ever having asked fate a real question, find one before it closes "
@@ -147,11 +127,6 @@ def sitting(
         "what closed it — then ask WHERE again and flip a fresh Unclaimed to open "
         "the next scene. You can also flip the Unclaimed again mid-scene, any time "
         "something genuinely new needs material rather than a yes-or-no answer."
-    )
-
-    lines.append(
-        "\nIf the player asks to save their game at any point, call save_game() "
-        "to write it to disk, then let them know it's been saved."
     )
 
     lines.append(
