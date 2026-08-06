@@ -165,3 +165,59 @@ distinguishing explicitly from the session-2 finding: that one was about
 *which* primitive to pick for a given feature; this one is about a single
 primitive trying to reach across the agency line from the inside, which
 structurally can't be done no matter which primitive it is.
+
+### Passive vs. active GM instructions — a pacing fix, for the article (2026-08-06)
+
+First live playtest of the session-6 Unclaimed/scene-close redesign (built
+since, never confirmed working until this session). The core mechanics
+fired correctly — cold-read-then-ground on the Unclaimed, the compound
+close condition, the reopening sequence all matched spec exactly. But one
+scene (arriving at a gate, queuing, a conversation with an NPC and a
+centaur, two full omens resolving) never closed at all — it just kept
+running.
+
+**Diagnosis:** not a bug. The scene's Unclaimed content ("a death kept
+quiet") genuinely never landed in the fiction during that stretch, so one
+of the two required close conditions was correctly never satisfied. The
+instruction already had an escape hatch — "you can also flip the Unclaimed
+again mid-scene, any time something genuinely new needs material" — but
+it's phrased as a rare, permissive option, not something Claude reached
+for even once despite several good openings in that same stretch.
+
+**The general point worth writing up:** an instruction can be mechanically
+correct and still produce bad pacing, because *correct* and *proactive*
+aren't the same thing. The fix wasn't a new rule — it was rewriting an
+existing, passive "you may, if you want" clause into an active "this is
+your job as GM, reach for it" one, plus resolving a real ambiguity
+underneath it (does a mid-scene Unclaimed flip's content count toward the
+close, or only the one that opened the scene? — decided: whichever is
+currently live, otherwise there'd be no payoff for using the escape hatch
+at all).
+
+**Current wording (`prompts.py`, scene-close paragraph):**
+
+> A scene closes once two things are both true: the Unclaimed's grounded
+> possibility has actually landed in the fiction, and an omen has been
+> asked and resolved. Once both are true, name the close out loud — say
+> plainly what closed it — then ask WHERE again and flip a fresh Unclaimed
+> to open the next scene. You can also flip the Unclaimed again mid-scene,
+> any time something genuinely new needs material rather than a
+> yes-or-no answer.
+
+**Proposed/shipped wording:**
+
+> A scene closes once two things are both true: the currently live
+> Unclaimed's grounded possibility has actually landed in the fiction, and
+> an omen has been asked and resolved. Once both are true, name the close
+> out loud — say plainly what closed it — then ask WHERE again and flip a
+> fresh Unclaimed to open the next scene. Don't just wait for the current
+> Unclaimed to land on its own — if an omen has already resolved in this
+> scene and the Unclaimed's content still hasn't found its way in, that's
+> your cue to actively steer the story toward it, or flip a fresh Unclaimed
+> if the old one isn't pulling its weight. You're running this scene, not
+> just adjudicating it: reach for the Unclaimed to keep things moving
+> toward a close, not only when things go quiet.
+
+Not yet playtested — next live session should confirm whether this
+actually tightens scene length, or whether Claude still under-uses the
+mid-scene flip even with more assertive wording.

@@ -121,12 +121,17 @@ def sitting(
     )
 
     lines.append(
-        "\nA scene closes once two things are both true: the Unclaimed's grounded "
-        "possibility has actually landed in the fiction, and an omen has been asked "
-        "and resolved. Once both are true, name the close out loud — say plainly "
-        "what closed it — then ask WHERE again and flip a fresh Unclaimed to open "
-        "the next scene. You can also flip the Unclaimed again mid-scene, any time "
-        "something genuinely new needs material rather than a yes-or-no answer."
+        "\nA scene closes once two things are both true: the currently live "
+        "Unclaimed's grounded possibility has actually landed in the fiction, and "
+        "an omen has been asked and resolved. Once both are true, name the close "
+        "out loud — say plainly what closed it — then ask WHERE again and flip a "
+        "fresh Unclaimed to open the next scene. Don't just wait for the current "
+        "Unclaimed to land on its own — if an omen has already resolved in this "
+        "scene and the Unclaimed's content still hasn't found its way in, that's "
+        "your cue to actively steer the story toward it, or flip a fresh Unclaimed "
+        "if the old one isn't pulling its weight. You're running this scene, not "
+        "just adjudicating it: reach for the Unclaimed to keep things moving "
+        "toward a close, not only when things go quiet."
     )
 
     lines.append(
