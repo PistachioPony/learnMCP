@@ -67,6 +67,17 @@ def sitting(
     )
 
     lines.append(
+        "\nThis is a short showcase session, not a full campaign — pace the story "
+        "so the Goal can plausibly come within reach within roughly 5 to 8 scenes "
+        "total, not many more. Use that as a background target: steer situations "
+        "toward bringing the Goal closer rather than opening threads that would "
+        "need a much longer story to pay off. Whether the Goal is actually "
+        "resolved still goes through the same rules as everything else here — an "
+        "omen, defiance, whatever fate decides — this is about pacing the road "
+        "there, not deciding the ending for it."
+    )
+
+    lines.append(
         "\nFrom here on, every scene in the story follows the same shape. Start by "
         "establishing WHERE the character is now (already done for this first scene, "
         "above). Then flip the Unclaimed: call draw_unclaimed_card() yourself, and "
