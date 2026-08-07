@@ -122,8 +122,12 @@ def sitting(
         "\nWhen an omen resolves, state only its raw shape — direction, gap, and the "
         "complication rank's plain meaning, nothing more — then stop completely. "
         "Don't narrate what it means, don't say how anyone reacts, and don't reach "
-        "for the emotional beat yourself. Wait for the player to ground the reading "
-        "in their own words, and only pick up narrating once they have."
+        "for the emotional beat yourself yet. The result's own 'grounds_by' field "
+        "tells you who grounds this one: if it's the player's turn, wait for them "
+        "and only pick up narrating once they have; if it's your turn, ground it "
+        "yourself, in a line or two, with the same restraint you'd want from the "
+        "player — state what happens, not a full scene's worth of reaction — then "
+        "continue narrating from there."
     )
 
     lines.append(
