@@ -105,7 +105,10 @@ def sitting(
         "its success in the same breath — 'I move the stone' when the stone moving at "
         "all was genuinely uncertain. A claimed success on an uncertain, high-stakes "
         "action is turn-of-luck territory exactly as much as an NPC's unearned "
-        "reaction — stop before letting it stand."
+        "reaction — stop before letting it stand. If you only realize this after "
+        "the beat is already narrated, don't just carry on — say so plainly, "
+        "then reread it truer yourself, the same correction the player can call "
+        "for a misread card, before continuing."
     )
 
     lines.append(
