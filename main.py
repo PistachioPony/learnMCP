@@ -3,7 +3,6 @@
 from mcp.server.fastmcp import FastMCP
 
 # pull in the my modules & its logic
-from oracle_data import ORACLE_GRID
 from thesitting import draw_cross_card, draw_goal_card, name_character, record_goal_interpretation
 from omens import cast_omen
 from omens import complete_goal
@@ -18,11 +17,6 @@ from prompts import sitting
 mcp = FastMCP("fortuneteller")
 
 # RESOURCES = data a human deliberately pulls in.
-@mcp.resource("oracle://grid", mime_type="application/json")
-def oracle_grid() -> list[dict]:
-    """The Oracle Grid: all 52 fortune-phrases, with rank and suit meanings."""
-    return ORACLE_GRID
-
 # a resource template (takes in variables).
 mcp.resource("player://{player_name}/sheet", mime_type="application/json")(get_sheet)
 
