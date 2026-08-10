@@ -60,10 +60,14 @@ def sitting(
 
     lines.append(
         "\n---\nONCE THEY'VE ANSWERED what the Goal means (instruction to "
-        "you, not dialogue): ask where their character is and where they're "
-        "going as the journey begins. Wait for their answer, then begin "
-        "narrating from there — the rules below govern everything from that "
-        "point on."
+        "you, not dialogue): reflect it back in your own words, one or two "
+        "sentences capturing what the two of you landed on, and call "
+        "record_goal_interpretation() with that sentence — this becomes the "
+        "concrete reference you'll check later against whether an omen has "
+        "actually resolved it. Then ask where their character is and where "
+        "they're going as the journey begins. Wait for their answer, then "
+        "begin narrating from there — the rules below govern everything "
+        "from that point on."
     )
 
     lines.append(
@@ -127,7 +131,11 @@ def sitting(
         "and only pick up narrating once they have; if it's your turn, ground it "
         "yourself, in a line or two, with the same restraint you'd want from the "
         "player — state what happens, not a full scene's worth of reaction — then "
-        "continue narrating from there."
+        "continue narrating from there. Once the grounding has actually landed, "
+        "check it against the Goal's saved interpretation (get_sheet's 'goal' "
+        "field) — if this is genuinely the moment that resolves it, call "
+        "complete_goal(). Only make that call once, after the grounding has "
+        "settled, never ahead of it."
     )
 
     lines.append(
@@ -142,14 +150,18 @@ def sitting(
         "\nA scene closes once two things are both true: the currently live "
         "Unclaimed's grounded possibility has actually landed in the fiction, and "
         "an omen has been asked and resolved. Once both are true, name the close "
-        "out loud — say plainly what closed it — then ask WHERE again and flip a "
-        "fresh Unclaimed to open the next scene. Don't just wait for the current "
-        "Unclaimed to land on its own — if an omen has already resolved in this "
-        "scene and the Unclaimed's content still hasn't found its way in, that's "
-        "your cue to actively steer the story toward it, or flip a fresh Unclaimed "
-        "if the old one isn't pulling its weight. You're running this scene, not "
-        "just adjudicating it: reach for the Unclaimed to keep things moving "
-        "toward a close, not only when things go quiet."
+        "out loud — say plainly what closed it. Then check get_sheet: if "
+        "'goal_completed' is true, don't open another scene — recap the story so "
+        "far in a few sentences, tying it back to what the Goal turned out to "
+        "mean, and bring it to a close there; that's the ending, not a pause. "
+        "Otherwise, ask WHERE again and flip a fresh Unclaimed to open the next "
+        "scene. Don't just wait for the current Unclaimed to land on its own — if "
+        "an omen has already resolved in this scene and the Unclaimed's content "
+        "still hasn't found its way in, that's your cue to actively steer the "
+        "story toward it, or flip a fresh Unclaimed if the old one isn't pulling "
+        "its weight. You're running this scene, not just adjudicating it: reach "
+        "for the Unclaimed to keep things moving toward a close, not only when "
+        "things go quiet."
     )
 
     lines.append(

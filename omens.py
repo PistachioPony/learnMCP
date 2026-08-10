@@ -3,7 +3,7 @@ import random
 from oracle_data import RANKS
 
 _omen_count = 0
-
+_goal_completed = False
 
 def _die_to_rank(value: int) -> str:
     if value == 1:
@@ -12,6 +12,10 @@ def _die_to_rank(value: int) -> str:
         return "10"
     return str(value)
 
+def complete_goal() -> None:
+    """Change goal_completed to True"""
+    global _goal_completed
+    _goal_completed = True
 
 def cast_omen(hope: str) -> dict:
     """Cast an omen: roll two d10 (light and dark), compare — never sum — and read the result."""

@@ -54,3 +54,11 @@ def draw_goal_card() -> dict:
     SUIT_PILES[suit].remove(card)
     GOAL = card
     return GOAL
+
+
+def record_goal_interpretation(interpretation: str) -> dict:
+    """Save what the Goal actually means, once the player's answered and it's been reflected back."""
+    if GOAL is None:
+        raise ValueError("The Goal hasn't been dealt yet — draw it before recording what it means.")
+    GOAL["interpretation"] = interpretation
+    return GOAL
