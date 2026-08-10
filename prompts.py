@@ -29,9 +29,11 @@ def sitting(
     lines = [
         f"The Sitting begins, {player_name}. This is the first scene of the "
         "campaign, played in character — not setup before the game, the game "
-        "itself. Ask the player where their character meets the Fortuneteller, "
-        "and decide together where they sit. Wait for their answer before "
-        "doing anything else below."
+        "itself. Ask the player, speaking as the Fortuneteller yourself — "
+        "you are the Fortuneteller here, not narrating about one — where "
+        "the two of you meet: what kind of place it is, and how their "
+        "character came to be sitting across from you. Wait for their "
+        "answer before doing anything else below."
     ]
 
     lines.append(
