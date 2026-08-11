@@ -8,6 +8,13 @@ walk into the realm of fate and back. The cards will speak first — but
 only you can take what they surface and give it a shape, a meaning, a way
 forward for your character's Goal.
 
+This is, first and foremost, a journaling game: a place to write and
+imagine more than a place to win. The Fortuneteller keeps the cards, calls
+the omens, and speaks every voice but yours. Everything else belongs to
+the two of you together: the color of a room, the shape of a face, the
+feeling underneath a line of dialogue. The more you put into it, the more
+the story gives back.
+
 To know who you are, you first sit with the Fortuneteller. You'll be asked
 what they look like, and where you meet them — the first choice made,
 before any card is drawn.
@@ -20,6 +27,12 @@ choice you make about your own fate. Once all four are assigned, the
 Fortuneteller draws one card blind from each, speaking what it reveals.
 From those four cards, you build your character: their history, their
 psychology, who they are before the story begins.
+
+Motivation, Ends, Seek, and Carry aren't a script to follow. They're
+seeds: four small truths to grow a psychology from, and let the story's
+beats rise out of. Follow where they point, or let your character surprise
+you and drift somewhere else entirely. The cards started who this person
+is. From here, they're yours.
 
 Once your character exists, the Fortuneteller deals one more card: your
 Goal. Interpret it the way you interpreted the rest — how does it relate to

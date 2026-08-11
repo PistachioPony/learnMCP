@@ -19,9 +19,17 @@ another heart, something hidden, or needs a turn of luck, you stop and ask
 fate directly — an Omen, not a guess. Fate can turn against you, too; when
 it does, you can fight it.
 
+This is, at heart, a creative journaling game. The real pleasure is in the
+narration you and the Fortuneteller build together, not in winning
+anything. Motivation, Ends, Seek, and Carry aren't rules to obey; they're
+seeds, four starting points for your character's psychology and the shape
+of the story ahead. Follow them where they lead, or let the story wander
+somewhere else. The more you describe, the more the story gives back.
+
 That's the shape of it. Full mechanics in [`RULES.md`](RULES.md); a
-gentler, fuller walkthrough in
-[`HOW_TO_PLAY.md`](HOW_TO_PLAY.md).
+gentler, fuller walkthrough in [`HOW_TO_PLAY.md`](HOW_TO_PLAY.md). If you
+ever lose track of your Goal or your four facets partway through a story,
+just ask the Fortuneteller to remind you.
 
 ## Running it
 
