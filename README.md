@@ -52,6 +52,16 @@ Requires Python and [`uv`](https://docs.astral.sh/uv/).
    "fortuneteller."
 5. Start a new chat and pull in the `sitting` prompt.
 
+## Influences
+
+This project draws from a few places. The Omens' two-dice reading, comparing
+rather than summing, owes a real debt to *Ironsworn* by Shawn Tomkin. The
+Defiance ritual, "Not Like This," borrows its five-dice, three-roll,
+keep-what-you-want shape from Yahtzee. As a journaling game, this owes a lot
+to *Thousand Year Old Vampire* by Tim Hutchings, one of the games that
+proved solo, prompt-driven play could carry real weight. And the writing of
+Max Moon has shaped the tone of this project throughout.
+
 ## Curious about the build?
 
 This started as a way to learn the Model Context Protocol properly — the
