@@ -1,3 +1,11 @@
+# This module holds the Fortuneteller's deck of cards.
+# This deck is what is what is used to prompt the player's imagination
+# as they create their character's psychology, game Goal and to help guide 
+# the story and keep the player (and the game keeper) narrating forward.  
+# I split the suits, rank and phrases because at the game start, the player 
+# must choose a suit for each of their character's 4 drives (see thesitting.py). 
+
+# each suit has a domain
 SUITS = {
     "♥": {"name": "Hearts", "domain": "love, loyalty, bonds"},
     "♦": {"name": "Diamonds", "domain": "wealth, desire, ambition"},
@@ -5,6 +13,7 @@ SUITS = {
     "♠": {"name": "Spades", "domain": "death, conflict, endings"},
 }
 
+# each rank has a core meaning
 RANKS = {
     "A": "a beginning; the seed; the suit in its purest form",
     "2": "a meeting; a pairing; a choice between two",
@@ -21,7 +30,8 @@ RANKS = {
     "K": "a person: authority; one who commands the domain",
 }
 
-# Each tuple is (Hearts, Diamonds, Clubs, Spades) phrases for that rank.
+# Each tuple is (Hearts, Diamonds, Clubs, Spades) phrases for that rank
+# Each rank has a phrase
 _PHRASES_BY_RANK = {
     "A": ("the first thread of a lasting bond", "the first coin of a great sum", "work begun with bare hands", "an ending takes its first breath"),
     "2": ("a stranger who will not stay a stranger", "two prizes, one purse", "a task that needs four hands", "a parting of ways"),
@@ -40,6 +50,8 @@ _PHRASES_BY_RANK = {
 
 _SUIT_ORDER = ["♥", "♦", "♣", "♠"]
 
+
+# Create the Fortuneteller's cards 
 ORACLE_GRID = [
     {
         "rank": rank,
@@ -50,5 +62,9 @@ ORACLE_GRID = [
         "phrase": phrase,
     }
     for rank, phrases in _PHRASES_BY_RANK.items()
+
+    # zip the tuples (combine into a single iterator of tuples, 
+    # pairing up elements that share the same index. Kinda like a zipper, 
+    # locking matching elements together side-by-side).
     for suit, phrase in zip(_SUIT_ORDER, phrases)
 ]

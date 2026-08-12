@@ -1,8 +1,8 @@
 # pulls in the official MCP SDK (the framework, not our own code).
-# everything in this file tells the server what is available. 
+# everything in this module tells the server what is available. 
 from mcp.server.fastmcp import FastMCP
 
-# pull in the my modules & its logic
+# pull in my modules & its logic
 from thesitting import draw_cross_card, draw_goal_card, name_character, record_goal_interpretation
 from omens import cast_omen
 from omens import complete_goal
@@ -26,7 +26,7 @@ mcp.resource("player://{player_name}/sheet", mime_type="application/json")(get_s
 mcp.prompt()(sitting)
 
 # registering the tools.
-# TOOLS = things the model calls automnomously mid-conversation.
+# TOOLS = things the model calls autonomously mid-conversation.
 mcp.add_tool(draw_cross_card)
 mcp.add_tool(draw_goal_card)
 mcp.add_tool(name_character)

@@ -1,3 +1,6 @@
+# This module is "The Sitting", the first encounter with The Fortuneteller. 
+# It helps the player create a character and a goal for the game.
+
 import random
 from typing import Literal
 
@@ -10,8 +13,13 @@ SUIT_PILES = {
     for suit in SUITS
 }
 
+# Dict that holds the character info for the game.
 CROSS: dict[str, dict] = {}
+
+# Character name string
 CHARACTER_NAME: str | None = None
+
+# The goal dict
 GOAL: dict | None = None
 
 
@@ -21,10 +29,10 @@ def name_character(player_name: str) -> dict:
     CHARACTER_NAME = player_name
     return {"player_name": player_name}
 
-
+# Let's draw the cards and Claude will show them to the player for them to interpret.
 def draw_cross_card(
     suit: Literal["♥", "♦", "♣", "♠"],
-    position: Literal["Motivation", "Ends", "Seek", "Carry"],
+    position: Literal["Motivation", "Seek", "Carry", "Ends"],
 ) -> dict:
     """Draw a card for the Sitting's cross, blind, from the given suit's pile, into the given position."""
     if position in CROSS:
@@ -40,7 +48,7 @@ def draw_cross_card(
     CROSS[position] = card
     return card
 
-
+# Now let's give the player a prompt for their character's goal 
 def draw_goal_card() -> dict:
     """Deal the Goal: reshuffle what's left of fate's deck and draw one card face up."""
     global GOAL
@@ -55,7 +63,7 @@ def draw_goal_card() -> dict:
     GOAL = card
     return GOAL
 
-
+# Claude now reflects back to the player the goal interpretation.
 def record_goal_interpretation(interpretation: str) -> dict:
     """Save what the Goal actually means, once the player's answered and it's been reflected back."""
     if GOAL is None:

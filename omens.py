@@ -1,3 +1,11 @@
+# This is the Omens module for the Omens dice mechanic AND the place where Claude 
+# flips the goal to completed.
+# When a player narrates to the point where they are confronted with an unknown,
+# that is, something that cannot have insight into: Other Hearts, Hidden Things,
+# or Turn of the Luck; An Omen is called. 
+# The mechanic works like this: one light D-10 for YES, one Dark D-10 for NO
+# The die that 'loses' gets a Rank card chosen as a prompt.
+
 import random
 
 from oracle_data import RANKS
@@ -12,6 +20,7 @@ def _die_to_rank(value: int) -> str:
         return "10"
     return str(value)
 
+# After a grounding lands (per the prompt in prompts.py), Claude reaches for this function when it determines that the goal has been reached during play.
 def complete_goal() -> None:
     """Change goal_completed to True"""
     global _goal_completed

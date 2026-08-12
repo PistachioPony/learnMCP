@@ -1,3 +1,6 @@
+# This module is what mixes the Python with the LLM and guides Claude's 
+# narration and gameplay guidance.
+
 from typing import Literal
 
 from mcp.server.fastmcp.prompts.base import UserMessage
@@ -26,6 +29,7 @@ def sitting(
     draw_cross_card(_SUIT_NAME_TO_SYMBOL[carry_suit], "Carry")
     draw_goal_card()
 
+# Where is the character meeting the Fortuneteller?
     lines = [
         f"The Sitting begins, {player_name}. This is the first scene of the "
         "campaign, played in character — not setup before the game, the game "
@@ -36,6 +40,7 @@ def sitting(
         "answer before doing anything else below."
     ]
 
+# The fortuneteller hands over the phrases from the cards for each of the 4 drives.
     lines.append(
         "\n---\nONCE THEY'VE ANSWERED where they meet the Fortuneteller (this "
         "line is an instruction to you, not dialogue to read aloud): read "
@@ -50,6 +55,8 @@ def sitting(
         "describe? Wait for their answer before moving on."
     )
 
+# The fortuneteller reflects back the player character and then hands over 
+# the goal card phrase to be interpreted by the player.
     goal = thesitting.GOAL
     lines.append(
         "\n---\nONCE THEY'VE DESCRIBED their character (instruction to you, "
@@ -60,6 +67,7 @@ def sitting(
         "answer before moving on."
     )
 
+# Now the goal is reflected back
     lines.append(
         "\n---\nONCE THEY'VE ANSWERED what the Goal means (instruction to "
         "you, not dialogue): reflect it back in your own words, one or two "
@@ -72,6 +80,7 @@ def sitting(
         "from that point on."
     )
 
+# Nudge to watch for where the goal is in the narration
     lines.append(
         "\nThis is a short showcase session, not a full campaign — pace the story "
         "so the Goal can plausibly come within reach within roughly 5 to 8 scenes "
@@ -83,6 +92,7 @@ def sitting(
         "there, not deciding the ending for it."
     )
 
+# Game play routine
     lines.append(
         "\nFrom here on, every scene in the story follows the same shape. Start by "
         "establishing WHERE the character is now (already done for this first scene, "
@@ -93,6 +103,7 @@ def sitting(
         "then do you begin narrating the scene forward."
     )
 
+# Game play rules, Omens, and the concept of the 3 unknowns
     lines.append(
         "\nFrom here, narrate the story forward, but the player authors their own "
         "character's words, choices, and actions — that's theirs, don't take it from "
@@ -123,6 +134,7 @@ def sitting(
         "for a misread card, before continuing."
     )
 
+# Omen specific nudge
     lines.append(
         "\nCall at least one omen every scene before it closes — a scene that never "
         "asks fate anything has stayed too safe. If you sense a scene resolving "
@@ -130,6 +142,7 @@ def sitting(
         "rather than letting it resolve untested."
     )
 
+# Omen rules and Goal Completion Check nudge
     lines.append(
         "\nWhen an omen resolves, state only its raw shape — direction, gap, and the "
         "complication rank's plain meaning, nothing more — then stop completely. "
@@ -147,6 +160,7 @@ def sitting(
         "settled, never ahead of it."
     )
 
+# Omen doubles rules and Defiance nudge
     lines.append(
         "\nIf an omen comes back doubles, call the hand yourself immediately — that "
         "part isn't the player's to invoke. You always narrate the landing yourself "
@@ -155,6 +169,7 @@ def sitting(
         "them to call defiance."
     )
 
+# The Unclaimed, Scenes, and a nudge to watch how they close
     lines.append(
         "\nA scene closes once two things are both true: the currently live "
         "Unclaimed's grounded possibility has actually landed in the fiction, and "
@@ -173,6 +188,7 @@ def sitting(
         "things go quiet."
     )
 
+# When to steer into the fiction and how 
     lines.append(
         "\nIf two or three omens have already resolved in a scene and it still "
         "hasn't closed, treat that as a strong signal to actively force things "
@@ -183,6 +199,7 @@ def sitting(
         "not less, when they're giving you less to work with."
     )
 
+# Nudge to keep reading "truer"
     lines.append(
         "\nAt any point, the player may say \"read it truer\" if your narration "
         "betrays a card's domain, magnitude, or phrase — suit is domain, rank is "
