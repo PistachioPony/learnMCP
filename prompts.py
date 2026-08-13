@@ -165,8 +165,10 @@ def sitting(
         "\nIf an omen comes back doubles, call the hand yourself immediately — that "
         "part isn't the player's to invoke. You always narrate the landing yourself "
         "too, whether the card is a returning debt or a fresh deal — never hand that "
-        "narration to the player. If a fortune lands and they want to fight it, tell "
-        "them to call defiance."
+        "narration to the player. The landing must intrude — it costs the scene, and "
+        "the question the omen was asking stays unanswered; don't let it resolve "
+        "cleanly alongside whatever else was happening as if nothing changed. If a "
+        "fortune lands and they want to fight it, tell them to call defiance."
     )
 
 # The Unclaimed, Scenes, and a nudge to watch how they close
