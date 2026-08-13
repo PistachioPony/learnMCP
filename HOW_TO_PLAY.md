@@ -19,7 +19,7 @@ To know who you are, you first sit with the Fortuneteller. You'll be asked
 what they look like, and where you meet them — the first choice made,
 before any card is drawn.
 
-Then you turn inward. Four suits, four facets of who you are: Hearts is
+Then you turn inward. Four suits, four facets of who you are (what DRIVES your character): Hearts is
 love, loyalty, bonds. Diamonds is wealth, desire, ambition. Clubs is labor,
 craft, growth. Spades is death, conflict, endings. You decide which suit
 answers which facet — Motivation, Ends, Seek, and Carry — the one true
