@@ -29,9 +29,7 @@ From those four cards, you build your character: their history, their
 psychology, who they are before the story begins.
 
 Motivation, Ends, Seek, and Carry aren't a script to follow. They're
-seeds: four small truths to grow a psychology from, and let the story's
-beats rise out of. Follow where they point, or let your character surprise
-you and drift somewhere else entirely. The cards started who this person
+seeds: four small truths to grow a psychology from, the character's drives that will add flavor to the beats, if you so choose. The cards started who this person
 is. From here, they're yours.
 
 Once your character exists, the Fortuneteller deals one more card: your
@@ -41,12 +39,13 @@ who you are, and where might it take you?
 Each card carries a phrase — read it the way a fortuneteller would, but
 truer: not just what it says, but how it lands in this exact scene. Let it
 shape your narration, decide where the scene goes next, and who it brings
-into it. Every scene works the same way: decide where you are, flip a new
-card to see what's stirring, then narrate forward — where you are, what you
+into it. Every scene works the same way: decide where you are; an Unclaimed card will be flipped. Describe what's stirring, then narrate forward. Elaborate on where you are, what you
 feel, what you see, what your character is doing. The moment you reach
 another heart, something hidden, or need a turn of luck, call an Omen.
 
 An Omen is how you ask fate directly, instead of deciding something that
-was never yours to decide. A scene closes once the Omen has been called
-and answered, and what the flipped card set in motion has been fulfilled
-in the story — then a new scene begins.
+was never yours to decide. Ask an Omen as a Yes/No question before the dice are cast. Say what you're hoping for — the light die represents that hope. Whichever die is higher gives the direction: light wins = fate favors what you hoped for; dark wins = it goes against you. Be sure to ground the result in those terms. The gap between the two dice is texture (close = a complication rides in; wide = better than hoped or worse than feared).
+
+A scene closes once the Omen has been asked and resolved, and what the flipped Unclaimed set in motion has landed in the story — then a new scene begins.
+
+
