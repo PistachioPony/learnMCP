@@ -51,6 +51,11 @@ Requires Python and [`uv`](https://docs.astral.sh/uv/).
 4. Click the `+` icon near the message box → Connectors → enable
    "fortuneteller."
 5. Start a new chat and pull in the `sitting` prompt.
+6. When filling in the four suit fields, type them exactly as `Hearts`,
+   `Diamonds`, `Clubs`, `Spades` — capitalized, plural, no other spelling or
+   symbol. Anything else fails with a generic error.
+7. Once the prompt attaches as a chip above the message box, click send —
+   attaching it doesn't submit it on its own.
 
 ## Influences
 
