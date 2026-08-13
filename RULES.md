@@ -15,7 +15,8 @@ the game.
    The suits mean : Hearts - love, loyalty, bonds. Diamonds - wealth, desire, ambition. Clubs - labor, craft, growth. Spades - death, conflict, endings. The fortune teller will then Speak the four phrases. Now the Player will take those phrases and describe the character they add up to.
 3. Now the Fortuneteller will deal the Goal — one card, the fate the character is walking
    toward (only after the character exists, not before).
-4. The character sets out.
+4. The player interprets the goal
+5. The character sets out.
 
 ## The Turn
 
