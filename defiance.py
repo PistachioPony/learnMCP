@@ -78,6 +78,7 @@ def defy_resolve() -> dict:
     rolls_taken = _rolls_taken
     result = _evaluate(final_dice)
 
+# Adding a card from each roll into the debt row.
     dealt = []
     for _ in range(rolls_taken):
         card = draw_from_hand_deck()

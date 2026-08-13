@@ -1,6 +1,7 @@
 # When doubles are rolled from an Omen,
 # this module takes care to read from a player's row of Debt cards 
-# if they have one. If not, a card is flipped from the Fortuneteller's Hand.
+# if they have one. If not, a card is flipped 
+# from the Fortuneteller's Hand.
 
 from hand_deck import draw_from_hand_deck
 
