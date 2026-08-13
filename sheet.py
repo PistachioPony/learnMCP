@@ -1,3 +1,8 @@
+# This module can be seen as the character sheet. 
+# it holds the Player's character name, drives, goal and
+# debt row if they have one. 
+# The word "Cross" is from the tabletop version of the game.
+
 import thesitting
 import debt
 import omens

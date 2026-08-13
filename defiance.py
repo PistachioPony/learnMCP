@@ -1,3 +1,10 @@
+# This module takes care of the Defiance Mechanic
+# When a card called from the Fortuneteller's Hand takes 
+# a dark turn in the narration, the player can call Defiance - "Not like this!"
+# A Yahtzee roll up to 3 times to buy not IF it happens but How, When, or Whom the
+# fate falls on. Each roll gives the player a debt card.  
+# If the player gets 5 of a kind, then they are allowed full authorship of the grounding.
+
 import random
 from collections import Counter
 from typing import Literal
