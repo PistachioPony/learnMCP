@@ -27,8 +27,8 @@ def sitting(
     lines.append(
         "\n---\nONCE THEY'VE ANSWERED where they meet the Fortuneteller (this "
         "line is an instruction to you, not dialogue to read aloud): now assign "
-        "each of the four drives to a suit — Motivation, then Seek, then Ends, "
-        "then Carry, in that order. For each drive in turn: explain what the "
+        "each of the four drives to a suit — Motivation, then Seek, then Carry, "
+        "then Ends, in that order. For each drive in turn: explain what the "
         "remaining suits mean (Hearts ♥ — love, loyalty, bonds. Diamonds ♦ — "
         "wealth, desire, ambition. Clubs ♣ — labor, craft, growth. Spades ♠ — "
         "death, conflict, endings), then ask the player which suit they want "
@@ -44,7 +44,7 @@ def sitting(
         "\n---\nONCE ALL FOUR DRIVES HAVE A SUIT (instruction to you): read "
         "back all four phrases you just drew, from the real results "
         "draw_cross_card gave you each time — exactly as written, don't "
-        "paraphrase — in this order: Motivation, Seek, carry, Ends. Format "
+        "paraphrase — in this order: Motivation, Seek, Carry, Ends. Format "
         "each line as **{drive} — {suit name}.** *{phrase}*"
     )
     lines.append(
