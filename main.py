@@ -23,7 +23,11 @@ mcp.resource("player://{player_name}/sheet", mime_type="application/json")(get_s
 # registering the prompt we can invoke.
 # PROMPTS = a fixed, reusable message template that
 # a human explicitly invokes.
-mcp.prompt()(sitting)
+mcp.prompt(
+    name="start_game",
+    title="Start Game",
+    description="Begin a new session of The Fortuneteller's Hand.",
+)(sitting)
 
 # registering the tools.
 # TOOLS = things the model calls autonomously mid-conversation.

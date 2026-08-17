@@ -1,33 +1,16 @@
 # This module is what mixes the Python with the LLM and guides Claude's 
 # narration and gameplay guidance.
 
-from typing import Literal
-
 from mcp.server.fastmcp.prompts.base import UserMessage
 
-import thesitting
-from oracle_data import SUITS
-from thesitting import draw_cross_card, draw_goal_card, name_character
-
-_LENS_ORDER = ["Motivation", "Seek", "Ends", "Carry"]
-
-_SUIT_NAME_TO_SYMBOL = {info["name"]: symbol for symbol, info in SUITS.items()}
+from thesitting import name_character
 
 
 def sitting(
     player_name: str,
-    motivation_suit: Literal["Hearts", "Diamonds", "Clubs", "Spades"],
-    ends_suit: Literal["Hearts", "Diamonds", "Clubs", "Spades"],
-    seek_suit: Literal["Hearts", "Diamonds", "Clubs", "Spades"],
-    carry_suit: Literal["Hearts", "Diamonds", "Clubs", "Spades"],
 ) -> UserMessage:
-    """Run the Sitting: name the character, draw the cross and Goal, then sequence the ritual's questions one at a time, in canon's order."""
+    """Run the Sitting: name the character, then sequence the ritual's questions one at a time, in canon's order."""
     name_character(player_name)
-    draw_cross_card(_SUIT_NAME_TO_SYMBOL[motivation_suit], "Motivation")
-    draw_cross_card(_SUIT_NAME_TO_SYMBOL[ends_suit], "Ends")
-    draw_cross_card(_SUIT_NAME_TO_SYMBOL[seek_suit], "Seek")
-    draw_cross_card(_SUIT_NAME_TO_SYMBOL[carry_suit], "Carry")
-    draw_goal_card()
 
 # Where is the character meeting the Fortuneteller?
     lines = [
@@ -40,31 +23,45 @@ def sitting(
         "answer before doing anything else below."
     ]
 
-# The fortuneteller hands over the phrases from the cards for each of the 4 drives.
+# The player assigns each of the four drives to a suit, live, one at a time.
     lines.append(
         "\n---\nONCE THEY'VE ANSWERED where they meet the Fortuneteller (this "
-        "line is an instruction to you, not dialogue to read aloud): read "
-        "these four lines to the player exactly as written — don't paraphrase "
-        "or summarize them:"
+        "line is an instruction to you, not dialogue to read aloud): now assign "
+        "each of the four drives to a suit — Motivation, then Seek, then Ends, "
+        "then Carry, in that order. For each drive in turn: explain what the "
+        "remaining suits mean (Hearts ♥ — love, loyalty, bonds. Diamonds ♦ — "
+        "wealth, desire, ambition. Clubs ♣ — labor, craft, growth. Spades ♠ — "
+        "death, conflict, endings), then ask the player which suit they want "
+        "for this drive, and wait for their answer. Once they choose, call "
+        "draw_cross_card with the matching symbol (♥, ♦, ♣, or ♠) and the "
+        "drive's name as the position — but don't reveal the phrase it draws "
+        "yet, just move on to asking about the next drive. Each suit can only "
+        "be used once, so only offer the ones not yet claimed."
     )
-    for position in _LENS_ORDER:
-        card = thesitting.CROSS[position]
-        lines.append(f"**{position} — {card['suit_name']}.** *{card['phrase']}*")
+
+# The fortuneteller hands over the phrases from the cards for each of the 4 drives.
+    lines.append(
+        "\n---\nONCE ALL FOUR DRIVES HAVE A SUIT (instruction to you): read "
+        "back all four phrases you just drew, from the real results "
+        "draw_cross_card gave you each time — exactly as written, don't "
+        "paraphrase — in this order: Motivation, Seek, carry, Ends. Format "
+        "each line as **{drive} — {suit name}.** *{phrase}*"
+    )
     lines.append(
         "\nThen ask: who is your character — who do these four phrases "
         "describe? Wait for their answer before moving on."
     )
 
-# The fortuneteller reflects back the player character and then hands over 
+# The fortuneteller reflects back the player character and then hands over
 # the goal card phrase to be interpreted by the player.
-    goal = thesitting.GOAL
     lines.append(
         "\n---\nONCE THEY'VE DESCRIBED their character (instruction to you, "
         "not dialogue): briefly reflect back the character they described, "
-        "in a line or two. Then reveal the Goal, reading this line exactly "
-        f"as written: **The Goal — {goal['suit_name']}.** *{goal['phrase']}* "
-        "Then ask what this Goal means to their character. Wait for their "
-        "answer before moving on."
+        "in a line or two. Then call draw_goal_card() yourself, and reveal "
+        "the Goal using the real result it gives you, reading it in this "
+        "exact format, not paraphrased: **The Goal — {suit name}.** "
+        "*{phrase}* Then ask what this Goal means to their character. Wait "
+        "for their answer before moving on."
     )
 
 # Now the goal is reflected back
