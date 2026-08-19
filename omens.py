@@ -21,10 +21,11 @@ def _die_to_rank(value: int) -> str:
     return str(value)
 
 # After a grounding lands (per the prompt in prompts.py), Claude reaches for this function when it determines that the goal has been reached during play.
-def complete_goal() -> None:
+def complete_goal() -> dict:
     """Change goal_completed to True"""
     global _goal_completed
     _goal_completed = True
+    return {"goal_completed": _goal_completed}
 
 def cast_omen(hope: str) -> dict:
     """Cast an omen: roll two d10 (light and dark), compare — never sum — and read the result."""
