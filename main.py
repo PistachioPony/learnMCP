@@ -1,6 +1,7 @@
 # pulls in the official MCP SDK (the framework, not our own code).
-# everything in this module tells the server what is available. 
+# everything in this module tells the server what is available.
 from mcp.server.fastmcp import FastMCP
+from mcp.types import ToolAnnotations
 
 # pull in my modules & its logic
 from thesitting import draw_cross_card, draw_goal_card, name_character, record_goal_interpretation
@@ -31,17 +32,67 @@ mcp.prompt(
 
 # registering the tools.
 # TOOLS = things the model calls autonomously mid-conversation.
-mcp.add_tool(draw_cross_card)
-mcp.add_tool(draw_goal_card)
-mcp.add_tool(name_character)
-mcp.add_tool(record_goal_interpretation)
-mcp.add_tool(cast_omen)
-mcp.add_tool(call_the_hand)
-mcp.add_tool(defy_roll)
-mcp.add_tool(defy_resolve)
-mcp.add_tool(draw_unclaimed_card)
-mcp.add_tool(get_sheet)
-mcp.add_tool(complete_goal)
+# readOnlyHint/destructiveHint reflect the real MCP spec's meaning, not just
+# "does this touch state": nothing here deletes or overwrites a player's
+# progress in a harmful, hard-to-reverse way, so nothing gets
+# destructiveHint=True — that flag would force a per-call confirmation
+# prompt in Claude, which breaks the autonomous, no-menu-trip play this
+# project is built around (see DESIGN.md).
+mcp.add_tool(
+    draw_cross_card,
+    title="Draw Cross Card",
+    annotations=ToolAnnotations(readOnlyHint=False, destructiveHint=False),
+)
+mcp.add_tool(
+    draw_goal_card,
+    title="Draw Goal Card",
+    annotations=ToolAnnotations(readOnlyHint=False, destructiveHint=False),
+)
+mcp.add_tool(
+    name_character,
+    title="Name Character",
+    annotations=ToolAnnotations(readOnlyHint=False, destructiveHint=False),
+)
+mcp.add_tool(
+    record_goal_interpretation,
+    title="Record Goal Interpretation",
+    annotations=ToolAnnotations(readOnlyHint=False, destructiveHint=False),
+)
+mcp.add_tool(
+    cast_omen,
+    title="Cast Omen",
+    annotations=ToolAnnotations(readOnlyHint=False, destructiveHint=False),
+)
+mcp.add_tool(
+    call_the_hand,
+    title="Call the Hand",
+    annotations=ToolAnnotations(readOnlyHint=False, destructiveHint=False),
+)
+mcp.add_tool(
+    defy_roll,
+    title="Roll Defiance Dice",
+    annotations=ToolAnnotations(readOnlyHint=False, destructiveHint=False),
+)
+mcp.add_tool(
+    defy_resolve,
+    title="Resolve Defiance",
+    annotations=ToolAnnotations(readOnlyHint=False, destructiveHint=False),
+)
+mcp.add_tool(
+    draw_unclaimed_card,
+    title="Draw Unclaimed Card",
+    annotations=ToolAnnotations(readOnlyHint=False, destructiveHint=False),
+)
+mcp.add_tool(
+    get_sheet,
+    title="Get Character Sheet",
+    annotations=ToolAnnotations(readOnlyHint=True, destructiveHint=False),
+)
+mcp.add_tool(
+    complete_goal,
+    title="Complete Goal",
+    annotations=ToolAnnotations(readOnlyHint=False, destructiveHint=False),
+)
 
 
 if __name__ == "__main__":
