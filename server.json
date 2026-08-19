@@ -1,0 +1,22 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.PistachioPony/fortunetellers-hand",
+  "title": "The Fortuneteller's Hand",
+  "description": "Solo journaling RPG — Claude runs The Fortuneteller's Hand, reading cards and casting Omens.",
+  "repository": {
+    "url": "https://github.com/PistachioPony/learnMCP",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "mcpb",
+      "identifier": "https://github.com/PistachioPony/learnMCP/releases/download/v0.1.0/fortunetellers-hand-0.1.0.mcpb",
+      "version": "0.1.0",
+      "fileSha256": "d8eb9aba41bf30b72e0a69da04e8781af42781c80d571480d87df6cf97f7a49e",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}

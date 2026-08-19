@@ -3,3 +3,4 @@ dev-logs/
 .venv/
 __pycache__/
 *.pyc
+server.json
