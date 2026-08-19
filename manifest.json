@@ -1,0 +1,28 @@
+{
+  "manifest_version": "0.4",
+  "name": "fortunetellers-hand",
+  "display_name": "The Fortuneteller's Hand",
+  "version": "0.1.0",
+  "description": "An MCP server that runs The Fortuneteller's Hand — a tabletop RPG by Maria Saha. This is the solo journaling RPG version where you create a narrative with Claude running the table, casting Omens and reading the cards.",
+  "author": {
+    "name": "Maria Saha",
+    "email": "maria@mariasaha.com"
+  },
+  "server": {
+    "type": "uv",
+    "entry_point": "main.py",
+    "mcp_config": {
+      "command": "uv",
+      "args": ["run", "--directory", "${__dirname}", "main.py"]
+    }
+  },
+  "compatibility": {
+    "platforms": ["darwin", "win32"],
+    "runtimes": {
+      "python": ">=3.12"
+    }
+  },
+  "privacy_policies": ["https://github.com/PistachioPony/learnMCP/blob/main/README.md#privacy-policy"],
+  "keywords": ["ttrpg", "solo", "journaling", "tarot", "oracle"],
+  "license": "MIT"
+}
