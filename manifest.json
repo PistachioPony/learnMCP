@@ -24,5 +24,19 @@
   },
   "privacy_policies": ["https://github.com/PistachioPony/learnMCP/blob/main/README.md#privacy-policy"],
   "keywords": ["ttrpg", "solo", "journaling", "tarot", "oracle"],
-  "license": "MIT"
+  "license": "MIT",
+  "tools": [
+    { "name": "draw_cross_card", "description": "Draw a card for the Sitting's cross, blind, from the given suit's pile, into the given position." },
+    { "name": "draw_goal_card", "description": "Deal the Goal: reshuffle what's left of fate's deck and draw one card face up." },
+    { "name": "name_character", "description": "Name the character being created at the Sitting." },
+    { "name": "record_goal_interpretation", "description": "Save what the Goal actually means, once the player's answered and it's been reflected back." },
+    { "name": "cast_omen", "description": "Cast an omen: roll two d10 (light and dark), compare — never sum — and read the result." },
+    { "name": "call_the_hand", "description": "Doubles trigger: play the table-wide ripest debt card, or deal a fresh card from the Fortuneteller's Hand deck if every row is clean." },
+    { "name": "defy_roll", "description": "Roll the defiance dice, keeping any values specified from the current dice, up to three rolls total." },
+    { "name": "defy_resolve", "description": "Lock in the current dice as final, deal one debt card per roll taken, and reset the ritual." },
+    { "name": "draw_unclaimed_card", "description": "Flip a card from the Fortuneteller's Hand for the Unclaimed: read cold, before any narration." },
+    { "name": "get_sheet", "description": "A player's current cross and debt row." },
+    { "name": "complete_goal", "description": "Change goal_completed to True." }
+  ],
+  "prompts_generated": true
 }
