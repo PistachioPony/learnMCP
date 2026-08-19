@@ -1,2 +1,5 @@
 MCP_NOTES.md
 dev-logs/
+.venv/
+__pycache__/
+*.pyc

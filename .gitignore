@@ -11,3 +11,6 @@ wheels/
 
 # Save data
 save.json
+
+# Built MCPB bundle
+*.mcpb
