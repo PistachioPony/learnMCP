@@ -6,7 +6,8 @@
   "description": "An MCP server that runs The Fortuneteller's Hand — a tabletop RPG by Maria Saha. This is the solo journaling RPG version where you create a narrative with Claude running the table, casting Omens and reading the cards.",
   "author": {
     "name": "Maria Saha",
-    "email": "maria@mariasaha.com"
+    "email": "maria@mariasaha.com",
+    "url": "https://github.com/PistachioPony"
   },
   "server": {
     "type": "uv",
