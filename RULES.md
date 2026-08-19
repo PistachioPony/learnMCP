@@ -2,7 +2,9 @@
 
 This is an adaptation of the tabletop roleplaying game called The
 Fortuneteller's Hand, by Maria Saha, created to learn the principles of
-Model Context Protocol.
+Model Context Protocol. For these rules in action, see
+[`08-2026-Play-Example.md`](08-2026-Play-Example.md), a full transcript of
+an actual session.
 
 ## The Sitting
 

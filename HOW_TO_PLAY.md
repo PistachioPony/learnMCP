@@ -30,7 +30,7 @@ psychology, who they are before the story begins.
 
 Motivation, Ends, Seek, and Carry aren't a script to follow. They're
 seeds: four small truths to grow a psychology from, the character's drives that will add flavor to the beats, if you so choose. The cards started who this person
-is. From here, they're yours.
+is. From there, they're yours to interpret.
 
 Once your character exists, the Fortuneteller deals one more card: your
 Goal. Interpret it the way you interpreted the rest — how does it relate to
@@ -44,8 +44,13 @@ feel, what you see, what your character is doing. The moment you reach
 another heart, something hidden, or need a turn of luck, call an Omen.
 
 An Omen is how you ask fate directly, instead of deciding something that
-was never yours to decide. Ask an Omen as a Yes/No question before the dice are cast. Say what you're hoping for — the light die represents that hope. Whichever die is higher gives the direction: light wins = fate favors what you hoped for; dark wins = it goes against you. Be sure to ground the result in those terms. The gap between the two dice is texture (close = a complication rides in; wide = better than hoped or worse than feared).
+was never yours to decide. Ask an Omen as a Yes/No question before the dice are cast. Say what you're hoping for. The light die represents that hope. Whichever die is higher gives the direction: light wins = fate favors what you hoped for; dark wins = it goes against you. Be sure to ground the result in those terms. The gap between the two dice is texture (close = a complication rides in; wide = better than hoped or worse than feared).
 
 A scene closes once the Omen has been asked and resolved, and what the flipped Unclaimed set in motion has landed in the story — then a new scene begins.
 
+Once you reach your goal, the game will end. 
+
+If you ever forget your goal or need to see your character sheet, just ask Claude for help with double parenthesis, like this: ((what is my goal?)). 
+
+Want to see all of this in motion? [`08-2026-Play-Example.md`](08-2026-Play-Example.md) is a full transcript of an actual session, start to finish.
 
