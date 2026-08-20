@@ -36,7 +36,7 @@ the Fortuneteller to remind you.
 
 ### Quick install
 
-1. Save [`learnMCP.mcpb`](learnMCP.mcpb) somewhere findable.
+1. Download [`fortunetellers-hand-0.1.1.mcpb`](https://github.com/PistachioPony/learnMCP/releases/download/v0.1.1/fortunetellers-hand-0.1.1.mcpb) somewhere findable.
 2. Double-click it (don't drag it into a chat window — just double-click
    the file itself). It'll open an install prompt in Claude Desktop.
 3. Confirm the install.

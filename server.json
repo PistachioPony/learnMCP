@@ -7,13 +7,13 @@
     "url": "https://github.com/PistachioPony/learnMCP",
     "source": "github"
   },
-  "version": "0.1.0",
+  "version": "0.1.1",
   "packages": [
     {
       "registryType": "mcpb",
-      "identifier": "https://github.com/PistachioPony/learnMCP/releases/download/v0.1.0/fortunetellers-hand-0.1.0.mcpb",
-      "version": "0.1.0",
-      "fileSha256": "d8eb9aba41bf30b72e0a69da04e8781af42781c80d571480d87df6cf97f7a49e",
+      "identifier": "https://github.com/PistachioPony/learnMCP/releases/download/v0.1.1/fortunetellers-hand-0.1.1.mcpb",
+      "version": "0.1.1",
+      "fileSha256": "f36d09e544b55785cbd5ac602ac238018a641d4ee65b917b32818d1761e23c43",
       "transport": {
         "type": "stdio"
       }

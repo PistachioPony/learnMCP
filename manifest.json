@@ -2,7 +2,7 @@
   "manifest_version": "0.4",
   "name": "fortunetellers-hand",
   "display_name": "The Fortuneteller's Hand",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An MCP server that runs The Fortuneteller's Hand — a tabletop RPG by Maria Saha. This is the solo journaling RPG version where you create a narrative with Claude running the table, casting Omens and reading the cards.",
   "author": {
     "name": "Maria Saha",
