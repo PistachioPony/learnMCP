@@ -9,7 +9,23 @@ DEBT_ROW: list[dict] = []
 
 
 def call_the_hand() -> dict:
-    """Doubles trigger: play the table-wide ripest debt card, or deal a fresh card from the Fortuneteller's Hand deck if every row is clean."""
+    """Trigger the Called Hand: an omen rolled doubles, so fate intrudes on the scene instead of answering the question.
+
+    Call immediately whenever cast_omen returns doubles=True — this isn't
+    the player's to invoke, Claude always calls it. Plays the oldest
+    outstanding debt card if any are owed (owed debt always comes due
+    first), otherwise deals a fresh card from the Fortuneteller's Hand
+    deck. Either way the landing must intrude on the scene — it costs
+    something, and the original question the omen asked stays unanswered.
+    If the player wants to fight the landed fortune, that's when they call
+    defiance (see defy_roll).
+
+    Takes no parameters. Not idempotent: mutates the shared debt row
+    (pops the oldest card) or the shared Hand deck (deals a fresh card).
+    Returns a dict with source ("debt_row" or "fresh_deal"), card (the
+    landed card's rank/suit/phrase/etc.), and a fixed note reminding you
+    the landing must intrude and the question stays unanswered.
+    """
     if DEBT_ROW:
         card = DEBT_ROW.pop(0)
         source = "debt_row"

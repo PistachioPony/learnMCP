@@ -36,7 +36,27 @@ def _evaluate(dice: list[int]) -> tuple[str, str] | None:
 
 
 def defy_roll(keep: list[Literal[1, 2, 3, 4, 5, 6]] | None = None) -> dict:
-    """Roll the defiance dice, keeping any values specified from the current dice, up to three rolls total."""
+    """Roll (or re-roll) the five defiance dice, Yahtzee-style, when a player wants to fight a landed fortune from call_the_hand.
+
+    Call once to make the first roll (keep=None or []), then optionally
+    call again up to two more times to re-roll, keeping whichever dice the
+    player wants to hold between rolls. Up to three rolls total; call
+    defy_resolve once the player is satisfied with the dice (or after the
+    third roll) to lock in the result and deal debt.
+
+    keep: the die face values (1-6) to hold onto from the current dice
+    before rolling the rest fresh — e.g. keep=[6, 6] to hold two sixes.
+    Must be a subset of what's actually currently showing (raises
+    ValueError otherwise), and must be empty/None on the very first roll of
+    a ritual (there are no dice to keep yet).
+
+    Not idempotent: mutates shared dice/roll-count state across calls
+    within one defiance ritual; each extra roll taken also means more debt
+    dealt later at defy_resolve. Returns a dict with dice (sorted current
+    values), rolls_taken, rolls_remaining, and current_pattern/current_bend
+    if the dice already match a scoring pattern (three of a kind, small
+    straight, full house, or five of a kind — see defy_resolve).
+    """
     global _dice, _rolls_taken
 
     keep = keep or []
@@ -68,7 +88,23 @@ def defy_roll(keep: list[Literal[1, 2, 3, 4, 5, 6]] | None = None) -> dict:
 
 
 def defy_resolve() -> dict:
-    """Lock in the current dice as final, deal one debt card per roll taken, and reset the ritual."""
+    """Lock in the current defiance dice as final, deal debt, and reset the ritual.
+
+    Call once, after defy_roll has been called at least once and the
+    player is done rolling (whether by choice or because three rolls were
+    taken). Ends the current defiance ritual — a subsequent defy_roll call
+    starts a fresh one from scratch.
+
+    Takes no parameters. Raises ValueError if called before any defy_roll
+    in this ritual. Not idempotent: mutates the shared debt row, adding
+    one debt card per roll taken during the ritual (more rolls, more debt,
+    win or lose), and clears the ritual's dice/roll-count state. Returns a
+    dict with final_dice, rolls_taken, pattern and bend (None if no
+    scoring pattern was hit — otherwise three of a kind/"turn the blade",
+    small straight/"stay the hand", full house/"take the cup", or five of
+    a kind/"seize the pen"), and debt_dealt (the cards just added to the
+    debt row).
+    """
     global _dice, _rolls_taken
 
     if not _dice:
