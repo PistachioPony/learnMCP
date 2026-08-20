@@ -34,6 +34,18 @@ the Fortuneteller to remind you.
 
 ## Running it
 
+### Quick install
+
+1. Save [`learnMCP.mcpb`](learnMCP.mcpb) somewhere findable.
+2. Double-click it (don't drag it into a chat window — just double-click
+   the file itself). It'll open an install prompt in Claude Desktop.
+3. Confirm the install.
+4. Fully quit and reopen Claude Desktop.
+5. Start a new chat, and pull in the `start_game` prompt — it'll ask for a
+   character name, then you're off.
+
+### Run from source
+
 Requires Python and [`uv`](https://docs.astral.sh/uv/).
 
 1. `uv sync` inside this directory.
@@ -51,12 +63,10 @@ Requires Python and [`uv`](https://docs.astral.sh/uv/).
 3. Fully quit and restart Claude Desktop.
 4. Click the `+` icon near the message box → Connectors → enable
    "fortuneteller."
-5. Start a new chat and pull in the `sitting` prompt.
-6. When filling in the four suit fields, type them exactly as `Hearts`,
-   `Diamonds`, `Clubs`, `Spades` — capitalized, plural, no other spelling or
-   symbol. Anything else fails with a generic error.
-7. Once the prompt attaches as a chip above the message box, click send —
-   attaching it doesn't submit it on its own.
+5. Start a new chat and pull in the `start_game` prompt.
+6. When it asks for your character's name (`player_name`), fill that in.
+7. Once the prompt attaches as a chip above the message box, click send or
+   hit enter — attaching it doesn't submit it on its own.
 
 ## Influences
 
