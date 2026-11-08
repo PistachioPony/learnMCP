@@ -14,3 +14,6 @@ save.json
 
 # Built MCPB bundle
 *.mcpb
+
+# macOS
+.DS_Store
