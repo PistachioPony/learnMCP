@@ -1,5 +1,7 @@
 # The Fortuneteller's Hand — an RPG MCP Server
 
+[![PistachioPony/learnMCP MCP server](https://glama.ai/mcp/servers/PistachioPony/learnMCP/badges/score.svg)](https://glama.ai/mcp/servers/PistachioPony/learnMCP)
+
 An MCP server that acts as a role playing game and GM using the rules of **The
 Fortuneteller's Hand**, an original tabletop RPG that I am currently working on. Claude reads the cards, casts the omens, and runs the table; the player and Claude will take turns narrating the story that develops. 
 
